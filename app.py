@@ -25,6 +25,9 @@ def predict_stock():
         )
         response = requests.get(url)
         json_data = response.json()
+        print("Alpha Vantage API raw response:")
+        print(json_data)  # This will show what's going wrong
+
 
         if "Error Message" in json_data:
             return jsonify({"error": "Invalid ticker symbol or API error"}), 400
